@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">ExercicioDeSoma</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="primeiro">Digite o primeiro número</string>
+    <string name="segundo">Digite o segundo número</string>
+    <string name="calcular">Calcular</string>
+    <string name="resultado">Resultado</string>
+    <string name="key">key</string>
+</resources>
