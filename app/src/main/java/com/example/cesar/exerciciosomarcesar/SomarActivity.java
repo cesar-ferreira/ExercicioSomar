@@ -13,8 +13,6 @@ import butterknife.OnClick;
 
 public class SomarActivity extends AppCompatActivity {
 
-    //protected static final int RESULT_OK = 20001;
-
     @BindView(R.id.edit_value1)
     EditText value1;
 
@@ -37,16 +35,27 @@ public class SomarActivity extends AppCompatActivity {
     @OnClick(R.id.button_ok)
     public void submit(View view) {
 
+        Double result = 0.0;
         Double n1 = Double.valueOf(value1.getText().toString());
         Double n2 = Double.valueOf(value2.getText().toString());
 
-        Double result = n1 + n2;
+        if(!verifica(n1)){
+            n1 = 0.0;
+        }
 
-        Intent intent = new Intent(this, MainActivity.class);
-        intent.putExtra(getString(R.string.key), result.toString());
-        setResult(RESULT_OK, intent);
-        finish();
-        //startActivityForResult(intent, RESULT_OK);
+        if(!verifica(n2)){
+            n2 = 0.0;
+        }
+
+        result = n1 + n2;
+
+        if(verifica(result)){
+            Intent intent = new Intent(this, MainActivity.class);
+            intent.putExtra(getString(R.string.key), result.toString());
+            setResult(RESULT_OK, intent);
+            finish();
+        }
+
 
     }
 
@@ -56,5 +65,12 @@ public class SomarActivity extends AppCompatActivity {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
 
+    }
+
+    public boolean verifica(Double number){
+        if (number.equals(0.0) || number.toString().equals("") || number.equals(null)){
+            return false;
+        }
+        return true;
     }
 }
