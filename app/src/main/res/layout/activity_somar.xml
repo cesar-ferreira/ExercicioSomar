@@ -5,13 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.cesar.exerciciosomarcesar.SomaActivity">
+    tools:context="com.example.cesar.exerciciosomarcesar.SomarActivity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/primeiro"
         android:layout_gravity="center"
+        android:textColor="@color/colorAccent"
         android:textSize="25sp"/>
 
     <EditText
@@ -29,6 +30,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/segundo"
+        android:textColor="@color/colorAccent"
         android:layout_gravity="center"
         android:textSize="25sp"/>
 
@@ -44,12 +46,22 @@
         android:padding="10dp"/>
 
     <Button
-        android:id="@+id/button_result"
+        android:id="@+id/button_ok"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorAccent"
-        android:textColor="@color/colorPrimaryDark"
+        android:textColor="@color/colorLight"
         android:layout_gravity="bottom"
-        android:text="@string/calcular"/>
+        android:layout_marginBottom="20dp"
+        android:text="@string/ok"/>
+
+    <Button
+        android:id="@+id/button_cancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:layout_gravity="bottom"
+        android:textColor="@color/colorLight"
+        android:text="@string/cancelar"/>
 
 </LinearLayout>
